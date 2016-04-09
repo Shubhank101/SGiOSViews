@@ -228,8 +228,9 @@ public class SGStepper extends View {
 
         if (conformToOriginalPost) {
             //path.rQuadTo(0, ry, rx, ry);//bottom-left corner
-            path.rLineTo(width, 0);
-            path.rLineTo(0, -ry);
+            path.rLineTo(widthMinusCorners + rx, 0);
+            path.rQuadTo(rx, 0, rx, -ry); //bottom-right corner
+            //path.rLineTo(0, -ry);
         }
         else {
             path.rQuadTo(0, ry, rx, ry);//bottom-left corner
