@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:stepper="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    stepper:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/stepper1Tv"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textSize="20sp"/>
+
+        <com.sgiosviews.SGStepper
+            android:id="@+id/stepper1"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            stepper:roundedradius="10dp"
+            android:layout_height="20dp"
+            />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:background="#222"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/stepper2Tv"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:textColor="#fff"
+            android:text="0"
+            android:textSize="20sp"/>
+
+        <com.sgiosviews.SGStepper
+            android:layout_alignParentRight="true"
+            android:id="@+id/stepper2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            stepper:bordercolor="#fff"
+            stepper:highlightcolor="#ccc"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

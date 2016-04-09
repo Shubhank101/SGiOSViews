@@ -1,0 +1,12 @@
+<resources>
+
+    <declare-styleable name="SGStepper">
+
+        <attr name="roundedradius" format="dimension"/>
+        <attr name="bordercolor" format="color"/>
+        <attr name="highlightcolor" format="color"/>
+
+    </declare-styleable>
+
+
+</resources>
