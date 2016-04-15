@@ -9,10 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.sgiosviews.SGStepper;
 import com.sgiosviews.app.R;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        /*
+        SGPickerView pickerView = (SGPickerView)findViewById(R.id.pickerView);
+        ArrayList<String> items = new ArrayList<String>();
+
+        for (int i = 0 ; i < 40; i++) {
+            items.add("String" + i);
+            //items.add("String 2");
+        }
+
+
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+
+
+        pickerView.setAdapter(itemsAdapter);
+        */
 
     }
 

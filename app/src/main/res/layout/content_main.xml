@@ -4,7 +4,7 @@
     xmlns:stepper="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#fff"
     stepper:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main"
     tools:context=".MainActivity"
@@ -67,6 +67,16 @@
 
     </RelativeLayout>
 
+    <com.sgiosviews.SGPickerView1
+        android:id="@+id/pickerView"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="210dp">
+
+
+
+    </com.sgiosviews.SGPickerView1>
 
 
 
