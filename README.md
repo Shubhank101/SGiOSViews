@@ -4,18 +4,27 @@
 Android Studio (gradle) 
 Min sdk 15
 
+## Demo
+
+![Demo](http://i.imgur.com/35IZ3rD.gif)
+
+
 ## SGStepper
 
 Info
 A port of iOS UIStepper, can be used a simple number picker
 
+
+## SGPickerView
+
+Info
+A very basic port of iOS UIPickerView.
+
+
 ## Usage
 
 Coming soon through gradle sync
 
-## Demo
-
-Coming Soon
 
 
 ## Developed By
