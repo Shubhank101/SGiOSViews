@@ -6,7 +6,7 @@ Min sdk 15
 
 ## Demo
 
-![Demo](http://i.imgur.com/35IZ3rD.gif)
+![Demo](http://i.imgur.com/YCOgHzr.gif)
 
 
 ## SGStepper
