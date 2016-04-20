@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:picker="http://schemas.android.com/apk/res-auto"
     xmlns:stepper="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    stepper:layout_behavior="@string/appbar_scrolling_view_behavior"
+    picker:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main"
     tools:context=".MainActivity"
     android:orientation="vertical">
@@ -37,7 +38,6 @@
     </RelativeLayout>
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -64,20 +64,38 @@
             stepper:highlightcolor="#ccc"
             />
 
-
     </RelativeLayout>
 
-    <com.sgiosviews.SGPickerView1
+    <com.sgiosviews.SGPickerView
         android:id="@+id/pickerView"
         android:layout_width="match_parent"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_height="210dp">
+        android:layout_marginBottom="40dp"
+        android:layout_height="wrap_content"
+        picker:defaultTextColor="#ccc"
+        picker:selectedTextColor="#666">
+    </com.sgiosviews.SGPickerView>
 
 
+    <Button
+        android:id="@+id/showPickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Show/Hide Picker"/>
 
-    </com.sgiosviews.SGPickerView1>
+    <Button
+        android:id="@+id/showValuePickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Picker Value"/>
 
-
-
+    <Button
+        android:id="@+id/changeColorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Change Color"/>
 </LinearLayout>

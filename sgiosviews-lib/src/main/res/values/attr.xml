@@ -9,4 +9,11 @@
     </declare-styleable>
 
 
+    <declare-styleable name="SGPickerView">
+
+        <attr name="defaultTextColor" format="color"/>
+        <attr name="selectedTextColor" format="color"/>
+
+    </declare-styleable>
+
 </resources>

@@ -2,22 +2,21 @@ package com.sgiosviews.app;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.sgiosviews.SGPickerView;
 import com.sgiosviews.SGStepper;
-import com.sgiosviews.app.R;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    SGPickerView pickerView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
 
 
@@ -44,10 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 if (finalValue > 10) {
                     stepper1.setBorderColor(Color.MAGENTA);
                     stepper1.setHighlightColor(Color.MAGENTA);
+                    pickerView.setVisibility(View.GONE);
+
                 } else {
                     stepper1.setBorderColor(Color.BLUE);
                     stepper1.setHighlightColor(Color.BLUE);
-
+                    pickerView.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -68,21 +68,74 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        SGPickerView pickerView = (SGPickerView)findViewById(R.id.pickerView);
+        pickerView = (SGPickerView)findViewById(R.id.pickerView);
         ArrayList<String> items = new ArrayList<String>();
 
-        for (int i = 0 ; i < 40; i++) {
-            items.add("String" + i);
-            //items.add("String 2");
-        }
+        items.add("Shubhank");
+        items.add("Funny");
+        items.add("Awesomeeeee");
+        items.add("Androidd");
+        items.add("Something long here");
+        items.add("SGPickerView");
+
+        pickerView.setItems(items);
 
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        pickerView.setPickerListener(new SGPickerView.SGPickerViewListener() {
+            @Override
+            public void itemSelected(String item, int index) {
+                Toast.makeText(MainActivity.this, " Index = " + String.valueOf(index) + " Item name " + item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button showPicker = (Button)findViewById(R.id.showPickerButton);
+        showPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pickerView.getVisibility() == View.VISIBLE) {
+                    pickerView.setVisibility(View.GONE);
+                } else {
+                    pickerView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
 
-        pickerView.setAdapter(itemsAdapter);
-        */
+        Button pickerValueButton = (Button)findViewById(R.id.showValuePickerButton);
+        pickerValueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this," Index = " + String.valueOf(pickerView.getCurrentSelectedItemIndex()) + " Item name " + pickerView.getCurrentSelectedItem(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button changeColorButton = (Button)findViewById(R.id.changeColorButton);
+        changeColorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    if (pickerView.getCurrentSelectedItemIndex() == 0) {
+                        pickerView.setDefaultItemTextColor(Color.rgb(140, 0, 0));
+                        pickerView.setSelectedItemTextColor(Color.rgb(255, 0, 0));
+                    }
+                    else if (pickerView.getCurrentSelectedItemIndex() == 1) {
+                        pickerView.setDefaultItemTextColor(Color.rgb(0, 140, 0));
+                        pickerView.setSelectedItemTextColor(Color.rgb(0, 255, 0));
+                    }
+                    else if (pickerView.getCurrentSelectedItemIndex() == 2) {
+                        pickerView.setDefaultItemTextColor(Color.rgb(0, 0, 140));
+                        pickerView.setSelectedItemTextColor(Color.rgb(0, 0, 255));
+                    }
+                    else if (pickerView.getCurrentSelectedItemIndex() == 3) {
+                        pickerView.setDefaultItemTextColor(Color.rgb(70, 70, 0));
+                        pickerView.setSelectedItemTextColor(Color.rgb(140, 140, 0));
+                    }
+                    else if (pickerView.getCurrentSelectedItemIndex() == 4) {
+
+                    }
+
+
+            }
+        });
 
     }
 
