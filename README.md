@@ -10,8 +10,9 @@ Min sdk 15
 
 ## Usage
 
-Add this to to your build.gradle dependencies
-`compile 'com.github.shubhank101.sgiosviews:sgiosviews-lib:1.0.0'`
+Add this to your build.gradle dependencies
+
+```compile 'com.github.shubhank101.sgiosviews:sgiosviews-lib:1.0.0'```
 
 ## SGStepper
 
@@ -43,7 +44,6 @@ stepper.setValueChangedlistener(new SGStepper.SGStepperListener() {
 
     @Override
     public void valuesChanged(SGStepper stepper, int newValue) {
-        stepper1Tv.setText(String.valueOf(newValue));
     }
 
     @Override
@@ -54,11 +54,54 @@ stepper.setValueChangedlistener(new SGStepper.SGStepperListener() {
 
 ## SGPickerView
 
-Info
 A very basic port of iOS UIPickerView.
 
+### Usage
 
+Add the following code to the root element of layout
 
+```
+xmlns:picker="http://schemas.android.com/apk/res-auto"
+```
+Adding the element to the xml 
+
+```
+<com.sgiosviews.SGPickerView
+    android:id="@+id/pickerView"
+    android:layout_width="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginBottom="40dp"
+    android:layout_height="wrap_content"
+    picker:defaultTextColor="#ccc"
+    picker:selectedTextColor="#666"/>
+```
+
+Setting Picker Values in Java
+```
+pickerView = (SGPickerView)findViewById(R.id.pickerView);
+
+ArrayList<String> items = new ArrayList<String>();
+items.add("Funny");
+items.add("Awesomeeeee");
+pickerView.setItems(items);
+```
+
+Listening to any new selection of element
+```
+pickerView.setPickerListener(new SGPickerView.SGPickerViewListener() {
+    @Override
+    public void itemSelected(String item, int index) {
+        Toast.makeText(MainActivity.this, " Index = " + String.valueOf(index) + " Item name " + item, Toast.LENGTH_SHORT).show();
+    }
+});
+```
+
+Public methods to access selected index or item at any time
+```
+pickerView.getCurrentSelectedItemIndex();
+pickerView.getCurrentSelectedItem();
+```
 
 ## Developed By
 

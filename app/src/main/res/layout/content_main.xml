@@ -75,8 +75,7 @@
         android:layout_marginBottom="40dp"
         android:layout_height="wrap_content"
         picker:defaultTextColor="#ccc"
-        picker:selectedTextColor="#666">
-    </com.sgiosviews.SGPickerView>
+        picker:selectedTextColor="#666"/>
 
 
     <Button
