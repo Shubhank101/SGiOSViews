@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'sgiosviews-lib'
+
+    publishedGroupId = 'com.github.shubhank101.sgiosviews'
+    libraryName = 'SG-iOSViews'
+    artifact = 'sgiosviews-lib'
+
+    libraryDescription = 'Common iOS Views ported to Android'
+
+    siteUrl = 'https://github.com/Shubhank101/SGiOSViews'
+    gitUrl = 'https://github.com/Shubhank101/SGiOSViews.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'shubhank'
+    developerName = 'Shubhank Gupta'
+    developerEmail = 'shubhankscores@gmail.com'
+
+    licenseName = 'MIT'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -23,3 +47,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

@@ -60,6 +60,7 @@
             android:id="@+id/stepper2"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
+            stepper:roundedradius="0dp"
             stepper:bordercolor="#fff"
             stepper:highlightcolor="#ccc"
             />
