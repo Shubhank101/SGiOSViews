@@ -12,7 +12,9 @@ Min sdk 15
 
 Add this to your build.gradle dependencies
 
-```compile 'com.github.shubhank101.sgiosviews:sgiosviews-lib:1.0.0'```
+```java
+compile 'com.github.shubhank101.sgiosviews:sgiosviews-lib:1.0.0'
+```
 
 ## SGStepper
 
@@ -21,12 +23,12 @@ A port of iOS UIStepper, can be used a simple number picker
 ### Usage
 
 Add the following code to the root element of layout
-```
+```xml
 xmlns:stepper="http://schemas.android.com/apk/res-auto"
 ```
 Adding the element to the xml 
 
-```
+```xml
 <com.sgiosviews.SGStepper    
     android:id="@+id/stepper"
     android:layout_width="wrap_content"
@@ -38,7 +40,7 @@ Adding the element to the xml
 ```
 
 Getting Values in Java
-```
+```java
 SGStepper stepper = (SGStepper)findViewById(R.id.stepper);
 stepper.setValueChangedlistener(new SGStepper.SGStepperListener() {
 
@@ -60,12 +62,12 @@ A very basic port of iOS UIPickerView.
 
 Add the following code to the root element of layout
 
-```
+```xml
 xmlns:picker="http://schemas.android.com/apk/res-auto"
 ```
 Adding the element to the xml 
 
-```
+```xml
 <com.sgiosviews.SGPickerView
     android:id="@+id/pickerView"
     android:layout_width="match_parent"
@@ -78,7 +80,7 @@ Adding the element to the xml
 ```
 
 Setting Picker Values in Java
-```
+```java
 pickerView = (SGPickerView)findViewById(R.id.pickerView);
 
 ArrayList<String> items = new ArrayList<String>();
@@ -88,7 +90,7 @@ pickerView.setItems(items);
 ```
 
 Listening to any new selection of element
-```
+```java
 pickerView.setPickerListener(new SGPickerView.SGPickerViewListener() {
     @Override
     public void itemSelected(String item, int index) {
@@ -98,7 +100,7 @@ pickerView.setPickerListener(new SGPickerView.SGPickerViewListener() {
 ```
 
 Public methods to access selected index or item at any time
-```
+```java
 pickerView.getCurrentSelectedItemIndex();
 pickerView.getCurrentSelectedItem();
 ```
